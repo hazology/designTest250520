@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="kr" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light" data-menu-styles="light" data-toggled="close">
+
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> 신품 :: 사찰 운영 DX 혁신 플랫폼 </title>
+    <!-- <meta name="description" content="신품(Sinpum)은 사찰 연등, 인등, 기도 관리 등 전통 불교 오프라인 시스템을 디지털 전환하는 DX 솔루션입니다. 직관적 어드민과 현대적 웹 서비스로 불교 문화를 지속가능하게 연결합니다.">
+
+    <meta name="Author" content="YojeumSaram Co., Ltd.">
+    <meta name="keywords" content="신품, Sinpum, 사찰 디지털 전환, 불교 DX, 연등 관리, 인등 관리, 사찰 어드민, 사찰 웹서비스, 불교 디지털화, 사찰 운영 시스템, 연등 예약, 인등 기도, 스마트 사찰, 전통문화 디지털 전환, 불교 IT 솔루션, 지속가능한 사찰 운영, 오프라인 시스템 디지털화, 사찰 ERP, 종교 디지털 전환"> -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/images/brand-logos/favicon.ico" type="image/x-icon">
+    
+    <!-- Choices JS -->
+    <script src="../assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+    
+    <!-- Bootstrap Css -->
+    <link id="style" href="../assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+
+     <!-- Main Theme Js -->
+     <script src="../assets/js/main.js"></script>
+
+    <!-- Style Css -->
+    <link href="../assets/css/styles.css" rel="stylesheet" >
+
+    <!-- Icons Css -->
+    <link href="../assets/css/icons.css" rel="stylesheet" >
+
+    <!-- Node Waves Css -->
+    <link href="../assets/libs/node-waves/waves.min.css" rel="stylesheet" > 
+
+    <!-- Simplebar Css -->
+    <link href="../assets/libs/simplebar/simplebar.min.css" rel="stylesheet" >
+    
+    <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../assets/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/libs/@simonwep/pickr/themes/nano.min.css">
+
+    <!-- Choices Css -->
+    <link rel="stylesheet" href="../assets/libs/choices.js/public/assets/styles/choices.min.css">
+
+
+</head>
+
+<body>
+
+    <!-- Start Switcher -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="switcher-canvas" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title text-default" id="offcanvasRightLabel">Switcher</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav class="border-bottom border-block-end-dashed">
+                <div class="nav nav-tabs nav-justified" id="switcher-main-tab" role="tablist">
+                    <button class="nav-link active" id="switcher-home-tab" data-bs-toggle="tab" data-bs-target="#switcher-home"
+                        type="button" role="tab" aria-controls="switcher-home" aria-selected="true">Theme Styles</button>
+                    <button class="nav-link" id="switcher-profile-tab" data-bs-toggle="tab" data-bs-target="#switcher-profile"
+                        type="button" role="tab" aria-controls="switcher-profile" aria-selected="false">Theme Colors</button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active border-0" id="switcher-home" role="tabpanel" aria-labelledby="switcher-home-tab"
+                    tabindex="0">
+                    <div class="">
+                        <p class="switcher-style-head">Theme Color Mode:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-light-theme">
+                                        Light
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="theme-style" id="switcher-light-theme"
+                                        checked>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-dark-theme">
+                                        Dark
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="theme-style" id="switcher-dark-theme">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="switcher-style-head">Directions:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-ltr">
+                                        LTR
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="direction" id="switcher-ltr" checked>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-rtl">
+                                        RTL
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="direction" id="switcher-rtl">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="switcher-style-head">Navigation Styles:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-vertical">
+                                        Vertical
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="navigation-style" id="switcher-vertical"
+                                        checked>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-horizontal">
+                                        Horizontal
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="navigation-style"
+                                        id="switcher-horizontal">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navigation-menu-styles">
+                        <p class="switcher-style-head">Vertical & Horizontal Menu Styles:</p>
+                        <div class="row switcher-style gx-0 pb-2 gy-2">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-menu-click">
+                                        Menu Click
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="navigation-menu-styles"
+                                        id="switcher-menu-click">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-menu-hover">
+                                        Menu Hover
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="navigation-menu-styles"
+                                        id="switcher-menu-hover">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-icon-click">
+                                        Icon Click
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="navigation-menu-styles"
+                                        id="switcher-icon-click">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-icon-hover">
+                                        Icon Hover
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="navigation-menu-styles"
+                                        id="switcher-icon-hover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidemenu-layout-styles">
+                        <p class="switcher-style-head">Sidemenu Layout Styles:</p>
+                        <div class="row switcher-style gx-0 pb-2 gy-2">
+                            <div class="col-sm-6">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-default-menu">
+                                        Default Menu
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="sidemenu-layout-styles"
+                                        id="switcher-default-menu" checked>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-closed-menu">
+                                        Closed Menu
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="sidemenu-layout-styles"
+                                        id="switcher-closed-menu">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-icontext-menu">
+                                        Icon Text
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="sidemenu-layout-styles"
+                                        id="switcher-icontext-menu">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-icon-overlay">
+                                        Icon Overlay
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="sidemenu-layout-styles"
+                                        id="switcher-icon-overlay">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-detached">
+                                        Detached
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="sidemenu-layout-styles"
+                                        id="switcher-detached">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-double-menu">
+                                        Double Menu
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="sidemenu-layout-styles"
+                                        id="switcher-double-menu">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="switcher-style-head">Page Styles:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-regular">
+                                        Regular
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="page-styles" id="switcher-regular"
+                                        checked>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-classic">
+                                        Classic
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="page-styles" id="switcher-classic">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-modern">
+                                        Modern
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="page-styles" id="switcher-modern">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="switcher-style-head">Layout Width Styles:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-full-width">
+                                        Full Width
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="layout-width" id="switcher-full-width"
+                                        checked>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-boxed">
+                                        Boxed
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="layout-width" id="switcher-boxed">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="switcher-style-head">Menu Positions:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-menu-fixed">
+                                        Fixed
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="menu-positions" id="switcher-menu-fixed"
+                                        checked>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-menu-scroll">
+                                        Scrollable
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="menu-positions" id="switcher-menu-scroll">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="switcher-style-head">Header Positions:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-header-fixed">
+                                        Fixed
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="header-positions"
+                                        id="switcher-header-fixed" checked>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-header-scroll">
+                                        Scrollable
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="header-positions"
+                                        id="switcher-header-scroll">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="switcher-style-head">Loader:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-loader-enable">
+                                        Enable
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="page-loader"
+                                        id="switcher-loader-enable">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-loader-disable">
+                                        Disable
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="page-loader"
+                                        id="switcher-loader-disable" checked>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade border-0" id="switcher-profile" role="tabpanel" aria-labelledby="switcher-profile-tab" tabindex="0">
+                    <div>
+                        <div class="theme-colors">
+                            <p class="switcher-style-head">Menu Colors:</p>
+                            <div class="d-flex switcher-style pb-2">
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-white" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Light Menu" type="radio" name="menu-colors"
+                                        id="switcher-menu-light">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-dark" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Dark Menu" type="radio" name="menu-colors"
+                                        id="switcher-menu-dark" checked>
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-primary" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Color Menu" type="radio" name="menu-colors"
+                                        id="switcher-menu-primary">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-gradient" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Gradient Menu" type="radio" name="menu-colors"
+                                        id="switcher-menu-gradient">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-transparent"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Transparent Menu"
+                                        type="radio" name="menu-colors" id="switcher-menu-transparent">
+                                </div>
+                            </div>
+                            <div class="px-4 pb-3 text-muted fs-11">Note:If you want to change color Menu dynamically change from below Theme Primary color picker</div>
+                        </div>
+                        <div class="theme-colors">
+                            <p class="switcher-style-head">Header Colors:</p>
+                            <div class="d-flex switcher-style pb-2">
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-white" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Light Header" type="radio" name="header-colors"
+                                        id="switcher-header-light" checked>
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-dark" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Dark Header" type="radio" name="header-colors"
+                                        id="switcher-header-dark">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-primary" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Color Header" type="radio" name="header-colors"
+                                        id="switcher-header-primary">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-gradient" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Gradient Header" type="radio" name="header-colors"
+                                        id="switcher-header-gradient">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-transparent" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Transparent Header" type="radio" name="header-colors"
+                                        id="switcher-header-transparent">
+                                </div>
+                            </div>
+                            <div class="px-4 pb-3 text-muted fs-11">Note:If you want to change color Header dynamically change from below Theme Primary color picker</div>
+                        </div>
+                        <div class="theme-colors">
+                            <p class="switcher-style-head">Theme Primary:</p>
+                            <div class="d-flex flex-wrap align-items-center switcher-style">
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-primary-1" type="radio"
+                                        name="theme-primary" id="switcher-primary">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-primary-2" type="radio"
+                                        name="theme-primary" id="switcher-primary1">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-primary-3" type="radio" name="theme-primary"
+                                        id="switcher-primary2">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-primary-4" type="radio" name="theme-primary"
+                                        id="switcher-primary3">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-primary-5" type="radio" name="theme-primary"
+                                        id="switcher-primary4">
+                                </div>
+                                <div class="form-check switch-select ps-0 mt-1 color-primary-light">
+                                    <div class="theme-container-primary"></div>
+                                    <div class="pickr-container-primary"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="theme-colors">
+                            <p class="switcher-style-head">Theme Background:</p>
+                            <div class="d-flex flex-wrap align-items-center switcher-style">
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-bg-1" type="radio"
+                                        name="theme-background" id="switcher-background">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-bg-2" type="radio"
+                                        name="theme-background" id="switcher-background1">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-bg-3" type="radio" name="theme-background"
+                                        id="switcher-background2">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-bg-4" type="radio"
+                                        name="theme-background" id="switcher-background3">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-bg-5" type="radio"
+                                        name="theme-background" id="switcher-background4">
+                                </div>
+                                <div class="form-check switch-select ps-0 mt-1 tooltip-static-demo color-bg-transparent">
+                                    <div class="theme-container-background"></div>
+                                    <div class="pickr-container-background"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-image mb-3">
+                            <p class="switcher-style-head">Menu With Background Image:</p>
+                            <div class="d-flex flex-wrap align-items-center switcher-style">
+                                <div class="form-check switch-select m-2">
+                                    <input class="form-check-input bgimage-input bg-img1" type="radio"
+                                        name="theme-background" id="switcher-bg-img">
+                                </div>
+                                <div class="form-check switch-select m-2">
+                                    <input class="form-check-input bgimage-input bg-img2" type="radio"
+                                        name="theme-background" id="switcher-bg-img1">
+                                </div>
+                                <div class="form-check switch-select m-2">
+                                    <input class="form-check-input bgimage-input bg-img3" type="radio" name="theme-background"
+                                        id="switcher-bg-img2">
+                                </div>
+                                <div class="form-check switch-select m-2">
+                                    <input class="form-check-input bgimage-input bg-img4" type="radio"
+                                        name="theme-background" id="switcher-bg-img3">
+                                </div>
+                                <div class="form-check switch-select m-2">
+                                    <input class="form-check-input bgimage-input bg-img5" type="radio"
+                                        name="theme-background" id="switcher-bg-img4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid canvas-footer">
+                    <a href="javascript:void(0);" id="reset-all" class="btn btn-secondary btn-block m-1">Reset</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Switcher -->
+
+
+    <!-- Loader -->
+    <div id="loader" >
+        <img src="../assets/images/media/media-79.svg" alt="">
+    </div>
+    <!-- Loader -->
+
+    <div class="page">
+         <!-- app-header -->
+         <header class="app-header">
+
+            <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid">
+
+                <!-- Start::header-content-left -->
+                <div class="header-content-left">
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="index.html" class="header-logo">
+                                <img src="../assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                                <img src="../assets/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                                <img src="../assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                                <img src="../assets/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+                                <img src="../assets/images/brand-logos/desktop-white.png" alt="logo" class="desktop-white">
+                                <img src="../assets/images/brand-logos/toggle-white.png" alt="logo" class="toggle-white">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link -->
+                        <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
+                        <!-- End::header-link -->
+                    </div>
+                    <!-- End::header-element -->
+
+
+                </div>
+                <!-- End::header-content-left -->
+
+                <!-- Start::header-content-right -->
+                <div class="header-content-right">
+
+
+
+                    <!-- Start::header-element -->
+                    <div class="header-element header-fullscreen  d-xl-flex d-none">
+                        <!-- Start::header-link -->
+                        <a onclick="openFullscreen();" href="javascript:void(0);" class="header-link">
+                            <i class="fe fe-maximize full-screen-open header-link-icon"></i>
+                            <i class="fe fe-minimize full-screen-close header-link-icon d-none"></i>
+                        </a>
+                        <!-- End::header-link -->
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element header-shortcuts-dropdown d-xl-flex d-none">
+                        <!-- Start::header-link|dropdown-toggle -->
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" id="notificationDropdown" aria-expanded="false">
+                            <i class="fe fe-grid header-link-icon"></i>
+                        </a>
+                        <!-- End::header-link|dropdown-toggle -->
+                        <!-- Start::main-header-dropdown -->
+                        <div class="main-header-dropdown header-shortcuts-dropdown dropdown-menu pb-0 dropdown-menu-end" aria-labelledby="notificationDropdown">
+                            <div class="p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="mb-0 fs-17 fw-semibold">연관 서비스</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider mb-0"></div>
+                            <div class="main-header-shortcuts p-2" id="header-shortcut-scroll">
+                               <div class="row g-2">
+                                   <div class="col-4">
+                                       <a href="javascript:void(0);" class="text-dark">
+                                            <div class="text-center p-3 related-app">
+                                                <span class="avatar avatar-sm rounded-2 p-1 bg-primary-transparent">
+                                                    <img src="../assets/images/apps/figma.png" alt="">
+                                                </span>
+                                                <span class="d-block fs-12">2025<br/>스탬프 투어</span>
+                                            </div>
+                                        </a>
+                                   </div>
+                               </div>
+                            </div>
+                        </div>
+                        <!-- End::main-header-dropdown -->
+                    </div>
+                    <!-- End::header-element -->
+
+
+                </div>
+                <!-- End::header-content-right -->
+
+            </div>
+            <!-- End::main-header-container -->
+
+        </header>
+        <!-- /app-header -->
+        <!-- Start::app-sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar">
+
+            <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header">
+                <a href="index.html" class="header-logo">
+                    <img src="../assets/images/brand-logos/desktop-white.png" class="desktop-white" alt="logo">
+                    <img src="../assets/images/brand-logos/toggle-white.png" class="toggle-white" alt="logo">
+                    <img src="../assets/images/brand-logos/desktop-logo.png" class="desktop-logo" alt="logo">
+                    <img src="../assets/images/brand-logos/toggle-dark.png" class="toggle-dark" alt="logo">
+                    <img src="../assets/images/brand-logos/toggle-logo.png" class="toggle-logo" alt="logo">
+                    <img src="../assets/images/brand-logos/desktop-dark.png" class="desktop-dark" alt="logo">
+                </a>
+            </div>
+            <!-- End::main-sidebar-header -->
+
+            <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll">
+
+                <!-- Start::nav -->
+                <nav class="main-menu-container nav nav-pills flex-column sub-open">
+                    <div class="slide-left" id="slide-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path> </svg>
+                    </div>
+                    <ul class="main-menu">
+                        <!-- Start::slide__category -->
+                        <li class="slide__category"><span class="category-name">보시(布施)</span></li>
+                        <!-- End::slide__category -->
+
+                        <!-- Start::slide -->
+                        <li class="slide active ">
+                            <a href="./sp01light_list.html" class="side-menu__item active">
+                                <span class="shape1"></span>
+                                <span class="shape2"></span>
+                                <i class="ti-light-bulb side-menu__icon"></i>
+                                <span class="side-menu__label">연등 관리</span>
+                            </a>
+                        </li>
+                        <!-- End::slide -->
+
+                        <!-- Start::slide -->
+                        <li class="slide">
+                            <a href="./sp02figure_list.html" class="side-menu__item">
+                                <span class="shape1"></span>
+                                <span class="shape2"></span>
+                                <i class="ti-linux side-menu__icon"></i>
+                                <span class="side-menu__label">인등 관리</span>
+                            </a>
+                        </li>
+                        <!-- End::slide -->
+
+
+                        <!-- Start::slide__category -->
+                        <li class="slide__category"><span class="category-name">행사 관리</span></li>
+                        <!-- End::slide__category -->
+
+                        <!-- Start::slide -->
+                        <li class="slide">
+                            <a href="landing.html" class="side-menu__item">
+                                <span class="shape1"></span>
+                                <span class="shape2"></span>
+                                <i class="ti-face-smile side-menu__icon"></i>
+                                <span class="side-menu__label">2025 스탬프 투어</span>
+                            </a>
+                        </li>
+                        <!-- End::slide -->
+
+
+                    </ul>
+                    <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path> </svg></div>
+                </nav>
+                <!-- End::nav -->
+
+            </div>
+            <!-- End::main-sidebar -->
+
+        </aside>
+        <!-- End::app-sidebar -->
+
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                <!-- Page Header -->
+
+                <div class="d-md-flex d-block align-items-center justify-content-between page-header-breadcrumb">
+                  <div>
+                      <h2 class="main-content-title fs-24 mb-1">연등 관리</h2>
+                      <ol class="breadcrumb mb-0">
+                          <li class="breadcrumb-item"><a href="javascript:void(0)">보시(布施)</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">연등 관리</li>
+                      </ol>
+                  </div>
+                  <div class="d-flex">
+                    <div class="justify-content-center">
+                        <button type="button" class="btn btn-white btn-icon-text my-2 me-2 d-inline-flex align-items-center">
+                          <i class="fe fe-download me-2 fs-14"></i> 엑셀 다운로드
+                        </button>
+                        <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModalLg" 
+                                class="btn btn-primary my-2 btn-icon-text d-inline-flex align-items-center">
+                          <i class="fe fe-plus me-2 fs-14"></i> 연등 등록
+                        </button>
+                        
+                        <div class="modal fade" id="exampleModalLg" tabindex="-1"
+                        aria-labelledby="exampleModalLgLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h6 class="modal-title" id="exampleModalLgLabel">연등 등록
+                                        </h6>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <!-- Start:: row-1 -->
+                                        <div class="row row-sm">
+                                            <div class="col-xl-12">
+
+                                                <div class="card custom-card">
+                                                    <div class="card-header justify-content-between">
+                                                        <div class="card-title">
+                                                            기본 정보
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="row gy-4">
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                <p class="mb-2 fw-medium">신청자 성함</p>
+                                                                <input type="text" class="form-control" id="input-placeholder" placeholder="신청자의 성함을 입력해주세요.">
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                <label for="input-label" class="form-label">전화번호</label>
+                                                                <input type="text" class="form-control" id="input-placeholder" placeholder="신청자의 전화번호를 입력해주세요">
+                                                            </div>
+                                                            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-12">
+                                                                <label for="input-label" class="form-label">주소</label>
+                                                                <input type="text" class="form-control" id="input-placeholder" placeholder="신청자의 주소를 입력해주세요">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card custom-card">
+                                                    <div class="card-header justify-content-between">
+                                                        <div class="card-title">
+                                                            연등 보시
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="row gy-4">
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                <p class="mb-2 fw-medium">연등 종류</p>
+                                                                <select class="form-control" data-trigger name="choices-single-default" id="choices-single-default">
+                                                                    <option value="">연등 종류를 선택해주세요.</option>
+                                                                    <option value="Choice 1">광명등</option>
+                                                                    <option value="Choice 2">대광명등</option>
+                                                                    <option value="Choice 3">기업등</option>
+                                                                    <option value="Choice 4">반야등</option>
+                                                                    <option value="Choice 5">영가등</option>
+                                                                    <option value="Choice 6">자비등</option>
+                                                                    <option value="Choice 7">차량등</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                <label for="input-placeholder" class="form-label">연등 위치</label>
+                                                                <input type="text" class="form-control" id="input-placeholder" placeholder="연등 위치를 입력해주세요.">
+                                                            </div>
+                                                            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-12">
+                                                                <label for="input-label" class="form-label">올라가는 성함</label>
+                                                                <input type="text" class="form-control" id="input-placeholder" placeholder="연등에 올라가는 내용을 입력해주세요.">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card custom-card">
+                                                    <div class="card-header justify-content-between">
+                                                        <div class="card-title">
+                                                            기타
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="row gy-4">
+                                                            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-12">
+                                                                <p class="mb-2 fw-medium">비고</p>
+                                                                <input type="text" class="form-control" id="input-placeholder" placeholder="비고 내용을 입력해주세요.">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">취소</button>
+                                        <button type="button" class="btn btn-primary">등록</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Page Header Close -->
+
+                <!-- Start::row-1 -->
+                <div class="row row-sm">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="card custom-card">
+                            <div class="card-header  border-bottom-0 pb-0">
+                                <div>
+                                    <div class="d-flex">
+                                        <label class="main-content-label my-auto pt-2">전체 연등</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pt-2">
+                                <div class="row table-filter align-items-center">
+                                    <div class="col-xl-3 col-lg-12">
+                                    </div>
+                                    <div class="col-xl-9 col-lg-12 d-lg-flex justify-content-end align-items-center mb-3 mt-2 mt-xl-0">
+                                        <div class="d-flex mt-3 mt-lg-0">
+                                            <div class="input-group">
+                                                <button class="btn btn-primary-transparent dropdown-toggle" type="button"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">성함</button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="javascript:void(0);">성함</a></li>
+                                                    <li><a class="dropdown-item" href="javascript:void(0);">전화번호</a></li>
+                                                </ul>
+                                                <input type="text" class="form-control"
+                                                    aria-label="Text input with 2 dropdown buttons">
+                                                <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="d-sm-flex mt-3 mt-lg-0 ms-3">
+                                            <div class="filter-group ms-3 d-flex align-items-center">
+                                                <label>
+                                                    <i class="fa fa-arrow-down-wide-short me-2 fs-12"></i>
+                                                </label>
+                                                
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>최신 등록순
+                                                    </option>
+                                                    <option value="1">성함 가나다순</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive border border-bottom-0">
+                                    <table class="table mb-0 text-nowrap text-md-nowrap">
+                                        <thead>
+                                            <tr class="border-bottom">
+                                                <th>번호</th>
+                                                <th>신청자</th>
+                                                <th>전화번호</th>
+                                                <th>연등종류</th>
+                                                <th>올라가는 성함</th>
+                                                <th>주소</th>
+                                                <th>연등 위치</th>
+                                                <th>비고</th>
+                                                <th>등록일자</th>
+                                                <th>등록자</th>
+                                                <th>활동</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-bottom">
+                                                <th scope="row">1</th>
+                                                <td>김혜정</td>
+                                                <td>010-0000-0000</td>
+                                                <td>광명등</td>
+                                                <td>김혜정</td>
+                                                <td>서울시 서초구</td>
+                                                <td>영1</td>
+                                                <td><span class="status bg-success"></span> 25신청</td>
+                                                <td>2025.04.28</td>
+                                                <td>홍길동</td>
+                                                <td>
+                                                    <div class="button-list">
+                                                         <a href="javascript:void(0);" class="btn"><i class="bi bi-file-earmark-text"></i></a>
+                                                         <a href="javascript:void(0);" class="btn"><i class="bi bi-pencil-square"></i></a>
+                                                         <a href="javascript:void(0);" class="btn"><i class="bi bi-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <nav aria-label="..." class="mt-3">
+                                    <ul class="pagination justify-content-end">
+                                        <li class="page-item disabled">
+                                            <span class="page-link">이전</span>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                        <li class="page-item active" aria-current="page">
+                                            <span class="page-link">2</span>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="javascript:void(0);">다음</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End::row-1 -->
+
+            </div>
+        </div>
+        <!-- End::app-content -->
+
+        <!-- Footer Start -->
+        <footer class="footer mt-auto py-3 bg-white text-center">
+            <div class="container">
+                <span class="text-muted"> Copyright © <span id="year"></span> <a
+                        href="javascript:void(0);" class="text-dark fw-semibold">신품</a>.
+                    </a> All
+                    rights
+                    reserved
+                </span>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+
+
+    </div>
+
+    
+    <!-- Scroll To Top -->
+    <div class="scrollToTop">
+        <span class="arrow"><i class="fe fe-arrow-up"></i></span>
+    </div>
+    <div id="responsive-overlay"></div>
+    <!-- Scroll To Top -->
+
+    <!-- Popper JS -->
+    <script src="../assets/libs/@popperjs/core/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Defaultmenu JS -->
+    <script src="../assets/js/defaultmenu.min.js"></script>
+
+    <!-- Node Waves JS-->
+    <script src="../assets/libs/node-waves/waves.min.js"></script>
+
+    <!-- Sticky JS -->
+    <script src="../assets/js/sticky.js"></script>
+
+    <!-- Simplebar JS -->
+    <script src="../assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="../assets/js/simplebar.js"></script>
+
+    <!-- Color Picker JS -->
+    <script src="../assets/libs/@simonwep/pickr/pickr.es5.min.js"></script>
+
+
+    
+    <!-- Custom-Switcher JS -->
+    <script src="../assets/js/custom-switcher.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/custom.js"></script>
+    
+
+</body>
+
+</html>
